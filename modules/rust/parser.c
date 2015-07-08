@@ -63,7 +63,10 @@ rust_parser_clone(LogPipe *s)
   cloned->rust_object = rust_parser_proxy_clone(self->rust_object);
 
   if (!cloned->rust_object)
-    return NULL;
+    {
+      g_free(cloned);
+      return NULL;
+    }
 
   __setup_callback_methods(cloned);
   
@@ -79,7 +82,10 @@ rust_parser_new(const gchar *name, GlobalConfig *cfg)
   self->rust_object = rust_parser_proxy_new(name);
 
   if (!self->rust_object)
-    return NULL;
+    {
+      g_free(self);
+      return NULL;
+    }
 
   __setup_callback_methods(self);
 
