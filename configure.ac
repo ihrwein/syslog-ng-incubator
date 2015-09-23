@@ -252,22 +252,7 @@ dnl ***************************************************************************
 INCUBATOR_CHECK_DEP(zmq,[PKG_CHECK_MODULES(ZMQ_CLIENT, libzmq >= $ZMQ_MIN_VERSION, zmq_found="yes", zmq_found="no")])
 
 if test "x$enable_rust" = "xyes" -o "x$enable_rust" = "xauto"; then
-    AC_CHECK_PROG(HAVE_RUSTC, rustc, 1, 0)
-    AC_CHECK_PROG(HAVE_CARGO, cargo, 1, 0)
-    if test ${HAVE_RUSTC} = 0; then
-        AC_MSG_WARN([Was about to enable Rust bindings, which need rustc, which you don't seem to have, disabling Rust bindings])
-        enable_rust=no
-    fi
-    if test ${HAVE_CARGO} = 0; then
-        AC_MSG_WARN([Was about to enable Rust bindings, which need Cargo, which you don't seem to have, disabling Rust bindings])
-        enable_rust=no
-    fi
-
-    if test "x$enable_rust" = "xyes"; then
-        PKG_CHECK_MODULES(SYSLOG_NG_RUST_MODULES, libsyslog_ng_rust_modules >= $LSRM_MIN_VERSION)
-        rust_modules_libdir=[`pkg-config --variable=libdir libsyslog_ng_rust_modules`]
-        AC_SUBST(rust_modules_libdir)
-    fi
+    AC_CONFIG_FILES([syslog-ng-rust-deps.pc])
 fi
 dnl ***************************************************************************
 dnl create common cflags/libs for incubator modules.
