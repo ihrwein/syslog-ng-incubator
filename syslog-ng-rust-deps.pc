@@ -1,0 +1,8 @@
+prefix=/home/tibi/workspace/syslog-ng-incubator
+libdir=${prefix}/b/modules/rust/.libs/
+
+Name: libsyslog-ng-rust-deps
+Description: C dependencies for a syslog-ng Rust module
+Required: syslog-ng
+Version: 0.1.0
+Libs: -L${libdir} -lsyslog-ng-rust-deps
