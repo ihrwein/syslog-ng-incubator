@@ -79,11 +79,11 @@ rust
   ;
 
 rust_filter
-  : KW_RUST '(' rust_filter_params ')' { $$ = *instance; }
+  : LL_IDENTIFIER '(' rust_filter_params ')' { $$ = *instance; }
   ;
 
 rust_parser
-  : KW_RUST '(' rust_parser_params ')' { $$ = *instance; }
+  : LL_IDENTIFIER '(' rust_parser_params ')' { $$ = *instance; }
   ;
 
 rust_filter_params

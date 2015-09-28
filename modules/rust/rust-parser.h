@@ -27,8 +27,6 @@
 #include "cfg-lexer.h"
 #include "filter/filter-expr.h"
 
-extern CfgParser rust_parser;
-
 CFG_PARSER_DECLARE_LEXER_BINDING(rust_, gpointer *)
 
 #endif

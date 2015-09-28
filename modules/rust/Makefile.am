@@ -15,13 +15,13 @@ modules_rust_libsyslog_ng_rust_deps_a_SOURCES = \
   modules/rust/parser.h
 
 modules_rust_libsyslog_ng_rust_deps_a_CPPFLAGS = \
-  $(INCUBATOR_CFLAGS)			\
+  $(INCUBATOR_CFLAGS)	-fPIC		\
   $(SYSLOG_NG_RUST_MODULES_CFLAGS)			\
   -I$(top_srcdir)/modules/rust        \
   -I$(top_builddir)/modules/rust
 
 #modules_rust_librust_la_LIBADD = $(SYSLOG_NG_RUST_MODULES_LIBS) $(INCUBATOR_LIBS)
-#modules_rust_librust_la_LDFLAGS = -avoid-version -module -no-undefined -R ${rust_modules_libdir}
+modules_rust_libsyslog_ng_rust_deps_a_LDFLAGS = -avoid-version -module -no-undefined -R ${rust_modules_libdir}
 
 else
 modules/rust modules/rust/ mod-rust: modules/rust/librust.la
