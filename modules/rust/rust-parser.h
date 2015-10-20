@@ -25,9 +25,9 @@
 
 #include "cfg-parser.h"
 #include "cfg-lexer.h"
-#include "filter/filter-expr.h"
+#include "parser/parser-expr.h"
 
-CFG_PARSER_DECLARE_LEXER_BINDING(rust_, gpointer *)
+CFG_PARSER_DECLARE_LEXER_BINDING(rust_, LogParser **)
 
 #endif
 

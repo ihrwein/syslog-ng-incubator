@@ -29,6 +29,7 @@
 %code {
 
 #include "cfg-parser.h"
+#include "parser.h"
 #include "rust-grammar.h"
 #include "syslog-names.h"
 #include "messages.h"
@@ -46,7 +47,7 @@
 
 %lex-param {CfgLexer *lexer}
 %parse-param {CfgLexer *lexer}
-%parse-param {gpointer *instance}
+%parse-param {LogParser **instance}
 %parse-param {gpointer arg}
 
 /* INCLUDE_DECLS */

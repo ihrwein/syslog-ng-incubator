@@ -22,11 +22,12 @@
 
 #include "cfg-parser.h"
 #include "logpipe.h"
+#include "parser.h"
 #include "rust-grammar.h"
 
 extern int rust_debug;
 
-int rust_parse(CfgLexer *lexer, gpointer *instance, gpointer arg);
+int rust_parse(CfgLexer *lexer, LogParser **instance, gpointer arg);
 
 static CfgLexerKeyword rust_keywords[] = {
   { "rust",     KW_RUST },
@@ -47,5 +48,5 @@ CfgParser rust_parser =
   .cleanup = (void (*)(gpointer)) log_pipe_unref,
 };
 
-CFG_PARSER_IMPLEMENT_LEXER_BINDING(rust_, gpointer *)
+CFG_PARSER_IMPLEMENT_LEXER_BINDING(rust_, LogParser **)
 
