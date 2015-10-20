@@ -21,7 +21,7 @@
  */
 
 #include "cfg-parser.h"
-#include "filter/filter-expr.h"
+#include "logpipe.h"
 #include "rust-grammar.h"
 
 extern int rust_debug;

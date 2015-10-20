@@ -9,8 +9,6 @@ modules_rust_libsyslog_ng_rust_deps_a_SOURCES = \
   modules/rust/rust-grammar.y       \
   modules/rust/rust-parser.c        \
   modules/rust/rust-parser.h        \
-  modules/rust/filter.c               \
-  modules/rust/filter.h				\
   modules/rust/parser.c				\
   modules/rust/parser.h
 
