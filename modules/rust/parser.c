@@ -71,12 +71,12 @@ rust_parser_clone(LogPipe *s)
 }
 
 LogParser*
-rust_parser_new(const gchar *name, GlobalConfig *cfg)
+rust_parser_new(GlobalConfig *cfg)
 {
   ParserRust *self = (ParserRust*) g_new0(ParserRust, 1);
 
   log_parser_init_instance(&self->super, cfg);
-  self->rust_object = rust_parser_proxy_new(name);
+  self->rust_object = rust_parser_proxy_new(&self->super);
 
   if (!self->rust_object)
     return NULL;

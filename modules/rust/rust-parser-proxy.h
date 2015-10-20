@@ -18,7 +18,7 @@ int
 rust_parser_proxy_init(struct RustParserProxy* s);
 
 struct RustParserProxy*
-rust_parser_proxy_new(const gchar* parser_name);
+rust_parser_proxy_new(LogParser *super);
 
 struct RustParserProxy*
 rust_parser_proxy_clone(struct RustParserProxy *self);

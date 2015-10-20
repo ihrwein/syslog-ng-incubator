@@ -82,7 +82,7 @@ rust_parser
 rust_parser_params
   : KW_TYPE '(' string ')'
     {
-      *instance = rust_parser_new($3, configuration);
+      *instance = rust_parser_new(configuration);
 
       if (!*instance)
        {
