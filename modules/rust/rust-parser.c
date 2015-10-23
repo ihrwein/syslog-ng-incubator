@@ -32,7 +32,6 @@ int rust_parse(CfgLexer *lexer, LogParser **instance, gpointer arg);
 static CfgLexerKeyword rust_keywords[] = {
   { "rust",     KW_RUST },
   { "option",   KW_OPTION },
-  { "type",     KW_TYPE },
   { NULL }
 };
  

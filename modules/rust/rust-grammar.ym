@@ -54,7 +54,6 @@
 
 %token KW_RUST
 %token KW_OPTION
-%token KW_TYPE
 
 %type <ptr> rust
 %type <ptr> rust_parser
@@ -80,19 +79,15 @@ rust_parser
   ;
 
 rust_parser_params
-  : KW_TYPE '(' string ')'
-    {
+  : {
       *instance = rust_parser_new(configuration);
 
       if (!*instance)
        {
-         msg_error("Cannot find the specified Rust parser, aborting",
-                   evt_tag_str("name", $3),
+         msg_error("Cannot create the Rust parser, aborting",
                    NULL);
          YYERROR;
        }
-
-      free($3);
     }
     rust_parser_options
   ;
