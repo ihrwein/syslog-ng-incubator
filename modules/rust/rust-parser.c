@@ -41,7 +41,7 @@ CfgParser rust_parser =
   .debug_flag = &rust_debug,
 #endif
   .context = LL_IDENTIFIER,
-  .name = "kutya",
+  .name = "rust-module",
   .keywords = rust_keywords,
   .parse = (gint (*)(CfgLexer *, gpointer *, gpointer)) rust_parse,
   .cleanup = (void (*)(gpointer)) log_pipe_unref,
